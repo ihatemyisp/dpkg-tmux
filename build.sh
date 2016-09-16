@@ -16,6 +16,11 @@ install_package() {
   fi
 }
 
+install_package "apt-show-versions"
+install_package "build-essential"
+install_package "libevent-dev"
+install_package "git"
+
 
 # set default prefix for package version
 ORG_PREFIX='xenial'
@@ -33,14 +38,9 @@ CPU_COUNT=`grep processor /proc/cpuinfo | wc -l`
 mkdir -p ${BUILD_DIR} ${INSTALL_DIR} ${PKG_DIR}
 cd ${BUILD_DIR}
 
-install_package "git"
-
 # download tmux source
 
 git clone https://github.com/tmux/tmux.git
-
-install_package "build-essential"
-install_package "libevent-dev"
 
 if [ -z $(which fpm) ] ; then
   apt_get_update
