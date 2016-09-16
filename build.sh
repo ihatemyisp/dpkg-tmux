@@ -50,14 +50,15 @@ fi
 # configure and build tmux
 cd tmux
 
-autogen.sh
-configure
+./autogen.sh
+./configure --prefix=/usr
+
 make -j${CPU_COUNT}
 make install DESTDIR=${INSTALL_DIR}
 
 cd ${INSTALL_DIR}/usr/bin
 
-$TMUX_VER=$(tmux -V | grep -Po '\d+\.\d+')
+TMUX_VER=$($INSTALL_DIR/usr/bin/tmux -V | grep -Po '\d+\.\d+')
 
 # create deb package with fpm
 cd ${WORK_DIR}
