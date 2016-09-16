@@ -20,7 +20,10 @@ install_package "apt-show-versions"
 install_package "build-essential"
 install_package "libevent-dev"
 install_package "git"
-
+install_package "autotools-dev"
+install_package "automake"
+install_package "pkg-config"
+install_package "ncurses-dev"
 
 # set default prefix for package version
 ORG_PREFIX='xenial'
