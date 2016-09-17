@@ -16,6 +16,7 @@ install_package() {
   fi
 }
 
+install_package "bundler"
 install_package "apt-show-versions"
 install_package "build-essential"
 install_package "libevent-dev"
@@ -24,6 +25,8 @@ install_package "autotools-dev"
 install_package "automake"
 install_package "pkg-config"
 install_package "ncurses-dev"
+
+bundle install
 
 # set default prefix for package version
 ORG_PREFIX='xenial'
