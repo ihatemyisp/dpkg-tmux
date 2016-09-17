@@ -8,11 +8,10 @@ Script that compiles and builds a Ubuntu package for tmux from the official tmux
 
 
 ## Pre-Requisites
-* apt-get install bundler (required to run bundle command)
+* Several, but they are all managed/installed by the script.
 
 ## Usage
 ```bash
-bundle install
 build.sh
 ```
 
